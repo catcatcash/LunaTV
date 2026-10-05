@@ -79,7 +79,7 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
 
   return (
     <nav
-      className='md:hidden fixed left-0 right-0 z-[600] bg-white/90 backdrop-blur-xl border-t border-gray-200/50 overflow-hidden dark:bg-gray-900/80 dark:border-gray-700/50'
+      className='md:hidden fixed left-0 right-0 z-[600] overflow-hidden border-t border-sakura-200/70 bg-[var(--sakura-surface)]/90 backdrop-blur-xl dark:border-sakura-900/50 dark:bg-[var(--sakura-surface)]/88'
       style={{
         /* 紧贴视口底部，同时在内部留出安全区高度 */
         bottom: 0,
@@ -98,22 +98,21 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
             >
               <Link
                 href={item.href}
-                className='flex flex-col items-center justify-center w-full h-14 gap-1 text-xs'
+                aria-current={active ? 'page' : undefined}
+                className='flex h-14 w-full items-center justify-center px-1.5'
               >
-                <item.icon
-                  className={`h-6 w-6 ${active
-                    ? 'text-green-600 dark:text-green-400'
-                    : 'text-gray-500 dark:text-gray-400'
-                    }`}
-                />
                 <span
-                  className={
+                  className={`flex h-12 w-full flex-col items-center justify-center gap-0.5 rounded-2xl text-[11px] font-medium leading-none transition-colors duration-200 ${
                     active
-                      ? 'text-green-600 dark:text-green-400'
-                      : 'text-gray-600 dark:text-gray-300'
-                  }
+                      ? 'bg-sakura-600 text-white shadow-sakura-nav dark:bg-sakura-500 dark:text-white'
+                      : 'text-gray-500 hover:bg-sakura-50 hover:text-sakura-700 dark:text-gray-400 dark:hover:bg-sakura-950/60 dark:hover:text-sakura-200'
+                  }`}
                 >
-                  {item.label}
+                  <item.icon
+                    className='h-5 w-5'
+                    strokeWidth={active ? 2.2 : 1.8}
+                  />
+                  <span>{item.label}</span>
                 </span>
               </Link>
             </li>

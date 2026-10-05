@@ -14,7 +14,47 @@
 }
 
 :root {
-  --foreground-rgb: 255, 255, 255;
+  /* 樱花粉 scale — RGB triplets for shadows / overlays */
+  --sakura-rgb-50: 255 248 249;
+  --sakura-rgb-100: 255 232 237;
+  --sakura-rgb-200: 255 209 220;
+  --sakura-rgb-300: 255 183 197;
+  --sakura-rgb-400: 245 154 173;
+  --sakura-rgb-500: 232 122 147;
+  --sakura-rgb-600: 212 93 122;
+  --sakura-rgb-700: 184 71 100;
+  --sakura-rgb-800: 143 58 81;
+  --sakura-rgb-900: 107 46 64;
+  --sakura-rgb-950: 61 26 36;
+
+  --sakura-50: #fff8f9;
+  --sakura-100: #ffe8ed;
+  --sakura-200: #ffd1dc;
+  --sakura-300: #ffb7c5;
+  --sakura-400: #f59aad;
+  --sakura-500: #e87a93;
+  --sakura-600: #d45d7a;
+  --sakura-700: #b84764;
+  --sakura-800: #8f3a51;
+  --sakura-900: #6b2e40;
+  --sakura-950: #3d1a24;
+
+  --sakura-petal: var(--sakura-300);
+  --sakura-primary: var(--sakura-500);
+  --sakura-active: var(--sakura-600);
+  --sakura-ink: var(--sakura-700);
+  --sakura-blush: var(--sakura-50);
+  --sakura-surface: #fff7f8;
+  --sakura-theme: #fff7f8;
+  --foreground-rgb: 55, 35, 42;
+}
+
+html.dark {
+  --sakura-surface: #1a1216;
+  --sakura-blush: #24191d;
+  --sakura-ink: var(--sakura-300);
+  --sakura-theme: #1a1216;
+  --foreground-rgb: 255, 236, 240;
 }
 
 html,
@@ -32,13 +72,18 @@ body {
 html:not(.dark) body {
   background: linear-gradient(
     180deg,
-    #e6f3fb 0%,
-    #eaf3f7 18%,
-    #f7f7f3 38%,
-    #e9ecef 60%,
-    #dbe3ea 80%,
-    #d3dde6 100%
+    #fff7f8 0%,
+    #fff2f4 18%,
+    #fff8f6 40%,
+    #fdf4f2 62%,
+    #f8ecee 82%,
+    #f3e4e8 100%
   );
+  background-attachment: fixed;
+}
+
+html.dark body {
+  background: linear-gradient(180deg, #1a1216 0%, #201418 42%, #181216 100%);
   background-attachment: fixed;
 }
 
@@ -49,16 +94,35 @@ html:not(.dark) body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(31, 41, 55, 0.1);
+  background: rgb(var(--sakura-rgb-100) / 0.45);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(75, 85, 99, 0.3);
+  background: rgb(var(--sakura-rgb-400) / 0.45);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(107, 114, 128, 0.5);
+  background: rgb(var(--sakura-rgb-500) / 0.6);
+}
+
+@layer components {
+  .poster-frame {
+    @apply overflow-hidden rounded-2xl shadow-sakura ring-1 ring-sakura-200 dark:ring-sakura-800;
+  }
+
+  html.dark .poster-frame {
+    box-shadow: 0 12px 28px -14px rgb(0 0 0 / 0.55),
+      0 1px 0 rgb(var(--sakura-rgb-700) / 0.35);
+  }
+
+  .sakura-chip {
+    @apply inline-flex items-center rounded-full border border-sakura-200/80 bg-sakura-50/90 px-2.5 py-0.5 text-xs font-medium text-sakura-700 dark:border-sakura-700/60 dark:bg-sakura-950/50 dark:text-sakura-200;
+  }
+
+  .poster-skeleton {
+    @apply relative aspect-[2/3] w-full animate-pulse overflow-hidden rounded-2xl bg-sakura-100 dark:bg-sakura-950;
+  }
 }
 
 /* 视频卡片悬停效果 */

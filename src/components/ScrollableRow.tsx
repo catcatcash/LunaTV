@@ -102,7 +102,7 @@ export default function ScrollableRow({
     >
       <div
         ref={containerRef}
-        className='flex space-x-6 overflow-x-auto scrollbar-hide py-1 sm:py-2 pb-12 sm:pb-14 px-4 sm:px-6'
+        className='scrollbar-hide flex space-x-5 overflow-x-auto px-4 py-2 pb-12 sm:space-x-8 sm:px-6 sm:py-3 sm:pb-14'
         onScroll={checkScroll}
       >
         {children}
@@ -128,9 +128,9 @@ export default function ScrollableRow({
           >
             <button
               onClick={handleScrollLeftClick}
-              className='w-12 h-12 bg-white/95 rounded-full shadow-lg flex items-center justify-center hover:bg-white border border-gray-200 transition-transform hover:scale-105 dark:bg-gray-800/90 dark:hover:bg-gray-700 dark:border-gray-600'
+              className='flex h-12 w-12 items-center justify-center rounded-full border border-sakura-200/80 bg-white/95 shadow-sakura transition-transform hover:scale-105 hover:bg-sakura-50 dark:border-sakura-800 dark:bg-sakura-950/90 dark:hover:bg-sakura-900'
             >
-              <ChevronLeft className='w-6 h-6 text-gray-600 dark:text-gray-300' />
+              <ChevronLeft className='h-6 w-6 text-sakura-700 dark:text-sakura-200' />
             </button>
           </div>
         </div>
@@ -157,9 +157,9 @@ export default function ScrollableRow({
           >
             <button
               onClick={handleScrollRightClick}
-              className='w-12 h-12 bg-white/95 rounded-full shadow-lg flex items-center justify-center hover:bg-white border border-gray-200 transition-transform hover:scale-105 dark:bg-gray-800/90 dark:hover:bg-gray-700 dark:border-gray-600'
+              className='flex h-12 w-12 items-center justify-center rounded-full border border-sakura-200/80 bg-white/95 shadow-sakura transition-transform hover:scale-105 hover:bg-sakura-50 dark:border-sakura-800 dark:bg-sakura-950/90 dark:hover:bg-sakura-900'
             >
-              <ChevronRight className='w-6 h-6 text-gray-600 dark:text-gray-300' />
+              <ChevronRight className='h-6 w-6 text-sakura-700 dark:text-sakura-200' />
             </button>
           </div>
         </div>
