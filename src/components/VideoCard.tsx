@@ -495,7 +495,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
   return (
     <>
       <div
-        className='group relative w-full rounded-lg bg-transparent cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.05] hover:z-[500]'
+        className='group relative w-full rounded-2xl bg-transparent cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.05] hover:z-[500]'
         onClick={handleClick}
         {...longPressProps}
         style={{
@@ -532,7 +532,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
       >
         {/* 海报容器 */}
         <div
-          className={`relative aspect-[2/3] overflow-hidden rounded-lg ${origin === 'live' ? 'ring-1 ring-gray-300/80 dark:ring-gray-600/80' : ''}`}
+          className={`poster-frame relative aspect-[2/3] ${origin === 'live' ? 'ring-sakura-300/80 dark:ring-sakura-700/80' : ''}`}
           style={{
             WebkitUserSelect: 'none',
             userSelect: 'none',
@@ -613,7 +613,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
               <PlayCircleIcon
                 size={50}
                 strokeWidth={0.8}
-                className='text-white fill-transparent transition-all duration-300 ease-out hover:fill-green-500 hover:scale-[1.1]'
+                className='text-white fill-transparent transition-all duration-300 ease-out hover:fill-sakura-500 hover:scale-[1.1]'
                 style={{
                   WebkitUserSelect: 'none',
                   userSelect: 'none',
@@ -683,7 +683,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
           {/* 年份徽章 */}
           {config.showYear && actualYear && actualYear !== 'unknown' && actualYear.trim() !== '' && (
             <div
-              className="absolute top-2 bg-black/50 text-white text-xs font-medium px-2 py-1 rounded backdrop-blur-sm shadow-sm transition-all duration-300 ease-out group-hover:opacity-90 left-2"
+              className="absolute top-2 left-2 bg-sakura-950/55 text-white text-xs font-medium px-2.5 py-0.5 rounded-full backdrop-blur-sm shadow-sm transition-all duration-300 ease-out group-hover:opacity-90"
               style={{
                 WebkitUserSelect: 'none',
                 userSelect: 'none',
@@ -701,7 +701,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
           {/* 徽章 */}
           {config.showRating && rate && (
             <div
-              className='absolute top-2 right-2 bg-pink-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shadow-md transition-all duration-300 ease-out group-hover:scale-110'
+              className='absolute top-2 right-2 bg-sakura-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shadow-sakura-nav transition-all duration-300 ease-out group-hover:scale-110'
               style={{
                 WebkitUserSelect: 'none',
                 userSelect: 'none',
@@ -718,7 +718,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
 
           {actualEpisodes && actualEpisodes > 1 && (
             <div
-              className='absolute top-2 right-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-md shadow-md transition-all duration-300 ease-out group-hover:scale-110'
+              className='absolute top-2 right-2 bg-sakura-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full shadow-sakura-nav transition-all duration-300 ease-out group-hover:scale-110'
               style={{
                 WebkitUserSelect: 'none',
                 userSelect: 'none',
@@ -758,7 +758,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
               }}
             >
               <div
-                className='bg-green-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shadow-md hover:bg-green-600 hover:scale-[1.1] transition-all duration-300 ease-out'
+                className='bg-sakura-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shadow-md hover:bg-sakura-600 hover:scale-[1.1] transition-all duration-300 ease-out'
                 style={{
                   WebkitUserSelect: 'none',
                   userSelect: 'none',
@@ -872,7 +872,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
                           <div className='space-y-0.5 sm:space-y-1'>
                             {displaySources.map((sourceName, index) => (
                               <div key={index} className='flex items-center gap-1 sm:gap-1.5'>
-                                <div className='w-0.5 h-0.5 sm:w-1 sm:h-1 bg-blue-400 rounded-full flex-shrink-0'></div>
+                                <div className='w-0.5 h-0.5 sm:w-1 sm:h-1 bg-sakura-400 rounded-full flex-shrink-0'></div>
                                 <span className='truncate text-[10px] sm:text-xs leading-tight' title={sourceName}>
                                   {sourceName}
                                 </span>
@@ -904,7 +904,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
         {/* 进度条 */}
         {config.showProgress && progress !== undefined && (
           <div
-            className='mt-1 h-1 w-full bg-gray-200 rounded-full overflow-hidden'
+            className='mt-2 h-1 w-full bg-sakura-100 rounded-full overflow-hidden dark:bg-sakura-950'
             style={{
               WebkitUserSelect: 'none',
               userSelect: 'none',
@@ -916,7 +916,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
             }}
           >
             <div
-              className='h-full bg-green-500 transition-all duration-500 ease-out'
+              className='h-full bg-sakura-500 transition-all duration-500 ease-out'
               style={{
                 width: `${progress}%`,
                 WebkitUserSelect: 'none',
@@ -953,7 +953,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
             } as React.CSSProperties}
           >
             <span
-              className='block text-sm font-semibold truncate text-gray-900 dark:text-gray-100 transition-colors duration-300 ease-in-out group-hover:text-green-600 dark:group-hover:text-green-400 peer'
+              className='block text-sm font-semibold truncate text-gray-900 dark:text-gray-100 transition-colors duration-300 ease-in-out group-hover:text-sakura-700 dark:group-hover:text-sakura-300 peer'
               style={{
                 WebkitUserSelect: 'none',
                 userSelect: 'none',
@@ -1004,7 +1004,7 @@ const VideoCard = forwardRef<VideoCardHandle, VideoCardProps>(function VideoCard
               }}
             >
               <span
-                className='inline-block border rounded px-2 py-0.5 border-gray-500/60 dark:border-gray-400/60 transition-all duration-300 ease-in-out group-hover:border-green-500/60 group-hover:text-green-600 dark:group-hover:text-green-400'
+                className='sakura-chip transition-all duration-300 ease-in-out group-hover:border-sakura-400 group-hover:text-sakura-700 dark:group-hover:text-sakura-200'
                 style={{
                   WebkitUserSelect: 'none',
                   userSelect: 'none',

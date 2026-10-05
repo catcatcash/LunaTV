@@ -1,6 +1,21 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
+/** 樱花粉 — soft petal primary, deeper active, blush surfaces */
+const sakura = {
+  50: '#fff8f9',
+  100: '#ffe8ed',
+  200: '#ffd1dc',
+  300: '#ffb7c5',
+  400: '#f59aad',
+  500: '#e87a93',
+  600: '#d45d7a',
+  700: '#b84764',
+  800: '#8f3a51',
+  900: '#6b2e40',
+  950: '#3d1a24',
+} as const;
+
 const config: Config = {
   darkMode: 'class',
   content: [
@@ -19,72 +34,22 @@ const config: Config = {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        // ponytail: 品牌粉，全站 green/emerald/lime 语义类重定向到此
-        'pastel-pink': {
-          50: '#fff1f4',
-          100: '#ffe3e9',
-          200: '#ffd3df',
-          300: '#ffa2bb',
-          400: '#fe6e99',
-          500: '#f83b78',
-          600: '#e51964',
-          700: '#c20e55',
-          800: '#a20f4e',
-          900: '#8a1148',
-          950: '#4d0424',
-        },
-        green: {
-          50: '#fff1f4',
-          100: '#ffe3e9',
-          200: '#ffd3df',
-          300: '#ffa2bb',
-          400: '#fe6e99',
-          500: '#f83b78',
-          600: '#e51964',
-          700: '#c20e55',
-          800: '#a20f4e',
-          900: '#8a1148',
-          950: '#4d0424',
-        },
-        emerald: {
-          50: '#fff1f4',
-          100: '#ffe3e9',
-          200: '#ffd3df',
-          300: '#ffa2bb',
-          400: '#fe6e99',
-          500: '#f83b78',
-          600: '#e51964',
-          700: '#c20e55',
-          800: '#a20f4e',
-          900: '#8a1148',
-          950: '#4d0424',
-        },
-        lime: {
-          50: '#fff1f4',
-          100: '#ffe3e9',
-          200: '#ffd3df',
-          300: '#ffa2bb',
-          400: '#fe6e99',
-          500: '#f83b78',
-          600: '#e51964',
-          700: '#c20e55',
-          800: '#a20f4e',
-          900: '#8a1148',
-          950: '#4d0424',
-        },
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-        },
+        // 樱花粉: one source scale. Existing green/emerald/lime classes and
+        // leftover LunaTV primary blues all resolve to this palette.
+        sakura,
+        'pastel-pink': sakura,
+        green: sakura,
+        emerald: sakura,
+        lime: sakura,
+        primary: sakura,
         dark: '#222222',
+      },
+      boxShadow: {
+        sakura:
+          '0 10px 24px -12px rgb(var(--sakura-rgb-600) / 0.38), 0 1px 0 rgb(var(--sakura-rgb-200) / 0.55)',
+        'sakura-lg':
+          '0 16px 32px -14px rgb(var(--sakura-rgb-600) / 0.42), 0 1px 0 rgb(var(--sakura-rgb-200) / 0.45)',
+        'sakura-nav': '0 6px 14px -6px rgb(var(--sakura-rgb-600) / 0.55)',
       },
       keyframes: {
         flicker: {

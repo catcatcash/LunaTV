@@ -3,7 +3,7 @@ import { ImagePlaceholder } from '@/components/ImagePlaceholder';
 const DoubanCardSkeleton = () => {
   return (
     <div className='w-full'>
-      <div className='group relative w-full rounded-lg bg-transparent shadow-none flex flex-col'>
+      <div className='group relative flex w-full flex-col rounded-2xl bg-transparent shadow-none'>
         {/* 图片占位符 - 骨架屏效果 */}
         <ImagePlaceholder aspectRatio='aspect-[2/3]' />
 

@@ -206,7 +206,7 @@ function HomeClient() {
                 </h2>
                 {favoriteItems.length > 0 && (
                   <button
-                    className='text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='text-sm text-gray-500 hover:text-sakura-700 dark:text-gray-400 dark:hover:text-sakura-300'
                     onClick={async () => {
                       await clearAllFavorites();
                       setFavoriteItems([]);
@@ -216,7 +216,7 @@ function HomeClient() {
                   </button>
                 )}
               </div>
-              <div className='justify-start grid grid-cols-3 gap-x-2 gap-y-14 sm:gap-y-20 px-0 sm:px-2 sm:grid-cols-[repeat(auto-fill,_minmax(11rem,_1fr))] sm:gap-x-8'>
+              <div className='justify-start grid grid-cols-3 gap-x-3 gap-y-16 sm:gap-y-20 px-0 sm:px-2 sm:grid-cols-[repeat(auto-fill,_minmax(11rem,_1fr))] sm:gap-x-8'>
                 {favoriteItems.map((item) => (
                   <div key={item.id + item.source} className='w-full'>
                     <VideoCard
@@ -248,7 +248,7 @@ function HomeClient() {
                   </h2>
                   <Link
                     href='/douban?type=movie'
-                    className='flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='flex items-center text-sm text-gray-500 hover:text-sakura-700 dark:text-gray-400 dark:hover:text-sakura-300'
                   >
                     查看更多
                     <ChevronRight className='w-4 h-4 ml-1' />
@@ -262,10 +262,10 @@ function HomeClient() {
                         key={index}
                         className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
                       >
-                        <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-gray-800'>
-                          <div className='absolute inset-0 bg-gray-300 dark:bg-gray-700'></div>
+                        <div className='poster-skeleton'>
+                          <div className='absolute inset-0 bg-sakura-200/70 dark:bg-sakura-900/50'></div>
                         </div>
-                        <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-gray-800'></div>
+                        <div className='mt-2 h-4 bg-sakura-100 rounded-full animate-pulse dark:bg-sakura-950'></div>
                       </div>
                     ))
                     : // 显示真实数据
@@ -296,7 +296,7 @@ function HomeClient() {
                   </h2>
                   <Link
                     href='/douban?type=tv'
-                    className='flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='flex items-center text-sm text-gray-500 hover:text-sakura-700 dark:text-gray-400 dark:hover:text-sakura-300'
                   >
                     查看更多
                     <ChevronRight className='w-4 h-4 ml-1' />
@@ -310,10 +310,10 @@ function HomeClient() {
                         key={index}
                         className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
                       >
-                        <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-gray-800'>
-                          <div className='absolute inset-0 bg-gray-300 dark:bg-gray-700'></div>
+                        <div className='poster-skeleton'>
+                          <div className='absolute inset-0 bg-sakura-200/70 dark:bg-sakura-900/50'></div>
                         </div>
-                        <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-gray-800'></div>
+                        <div className='mt-2 h-4 bg-sakura-100 rounded-full animate-pulse dark:bg-sakura-950'></div>
                       </div>
                     ))
                     : // 显示真实数据
@@ -343,7 +343,7 @@ function HomeClient() {
                   </h2>
                   <Link
                     href='/douban?type=anime'
-                    className='flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='flex items-center text-sm text-gray-500 hover:text-sakura-700 dark:text-gray-400 dark:hover:text-sakura-300'
                   >
                     查看更多
                     <ChevronRight className='w-4 h-4 ml-1' />
@@ -357,10 +357,10 @@ function HomeClient() {
                         key={index}
                         className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
                       >
-                        <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-gray-800'>
-                          <div className='absolute inset-0 bg-gray-300 dark:bg-gray-700'></div>
+                        <div className='poster-skeleton'>
+                          <div className='absolute inset-0 bg-sakura-200/70 dark:bg-sakura-900/50'></div>
                         </div>
-                        <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-gray-800'></div>
+                        <div className='mt-2 h-4 bg-sakura-100 rounded-full animate-pulse dark:bg-sakura-950'></div>
                       </div>
                     ))
                     : // 展示当前日期的番剧
@@ -418,7 +418,7 @@ function HomeClient() {
                   </h2>
                   <Link
                     href='/douban?type=show'
-                    className='flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='flex items-center text-sm text-gray-500 hover:text-sakura-700 dark:text-gray-400 dark:hover:text-sakura-300'
                   >
                     查看更多
                     <ChevronRight className='w-4 h-4 ml-1' />
@@ -432,10 +432,10 @@ function HomeClient() {
                         key={index}
                         className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
                       >
-                        <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-gray-800'>
-                          <div className='absolute inset-0 bg-gray-300 dark:bg-gray-700'></div>
+                        <div className='poster-skeleton'>
+                          <div className='absolute inset-0 bg-sakura-200/70 dark:bg-sakura-900/50'></div>
                         </div>
-                        <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-gray-800'></div>
+                        <div className='mt-2 h-4 bg-sakura-100 rounded-full animate-pulse dark:bg-sakura-950'></div>
                       </div>
                     ))
                     : // 显示真实数据
